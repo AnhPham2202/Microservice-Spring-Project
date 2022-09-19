@@ -1,0 +1,18 @@
+[submodule "Microservice-Cloud-Properties-Repo"]
+	path = Microservice-Cloud-Properties-Repo
+	url = https://github.com/AnhPham2202/Microservice-Cloud-Properties-Repo.git
+[submodule "Microservice-Cloud-API-Gateway"]
+	path = Microservice-Cloud-API-Gateway
+	url = https://github.com/AnhPham2202/Microservice-Cloud-API-Gateway.git
+[submodule "Microservice-Cloud-Config-Server"]
+	path = Microservice-Cloud-Config-Server
+	url = https://github.com/AnhPham2202/Microservice-Cloud-Config-Server.git
+[submodule "Microservice-Cloud-Student-Service"]
+	path = Microservice-Cloud-Student-Service
+	url = https://github.com/AnhPham2202/Microservice-Cloud-Student-Service.git
+[submodule "Microservice-Cloud-Address-Service"]
+	path = Microservice-Cloud-Address-Service
+	url = https://github.com/AnhPham2202/Microservice-Cloud-Address-Service.git
+[submodule "Microservice-Cloud-Eureka-Server"]
+	path = Microservice-Cloud-Eureka-Server
+	url = https://github.com/AnhPham2202/Microservice-Cloud-Eureka-Server.git
