@@ -3,7 +3,7 @@
 Parent module of Microservice cloud project
 
 PROJECT STRUCTURE
-
+<pre>
 ├───Microservice-Cloud-Address-Service
 ├───Microservice-Cloud-API-Gateway
 ├───Microservice-Cloud-Config-Server
@@ -13,7 +13,7 @@ PROJECT STRUCTURE
    └───setup.sql
 ├───docker-compose.yml
 └───mysql.env
-
+</pre>
 START PROJECT
 
 1. Running with Docker (Recommend)
