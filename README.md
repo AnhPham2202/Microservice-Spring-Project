@@ -5,13 +5,21 @@ Parent module of Microservice cloud project
 PROJECT STRUCTURE
 
 ├───Microservice-Cloud-Address-Service
+
 ├───Microservice-Cloud-API-Gateway
+
 ├───Microservice-Cloud-Config-Server
+
 ├───Microservice-Cloud-Eureka-Server
+
 ├───Microservice-Cloud-Student-Service
+
 ├───mysql-init-files
+
 │   ├───setup.sql
+
 ├───docker-compose.yml
+
 └───mysql.env
 
 START PROJECT
