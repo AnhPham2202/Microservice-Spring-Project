@@ -1,0 +1,73 @@
+version: '3.8'
+services:
+  mysql-service:
+    container_name: mysql-service
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    expose:
+      - 3306
+    env_file:
+      - mysql.env
+    volumes:
+        - ./mysql-init-files:/docker-entrypoint-initdb.d
+
+  eureka-server:
+    container_name: eureka-server
+    image: eureka-server:latest
+    ports:
+      - 8761:8761
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  config-server:
+    container_name: config-server
+    image: config-server:latest
+    expose:
+      - 8888
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:8888"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+
+  gateway-service:
+    container_name: gateway-service
+    image: gateway-service:latest
+    ports:
+      - 9090:9090
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:9090"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      config-server: 
+        condition: service_healthy
+      
+        
+  address-service:
+    container_name: address-service
+    image: address-service:latest
+    expose:
+      - 8081
+    depends_on:
+      gateway-service: 
+        condition: service_healthy
+      
+
+  student-service:
+    container_name: student-service
+    image: student-service:latest
+    expose:
+      - 8080
+    depends_on:
+      gateway-service: 
+        condition: service_healthy
+      
